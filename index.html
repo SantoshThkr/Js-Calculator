@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<style>
+		
+		body{
+			background-color: #3fb399;
+		}
+		.container{
+			background-color: #ffffff;
+			width: 300px;
+			margin: 120px auto;
+		}
+		table{
+			border-color: #f4f4f4;
+			width: 100%;
+		}
+		td{
+			width: 25%;
+		}
+		button{
+			width: 100%;
+			height: 70px;
+			border: none;
+			font-size: 25px;
+			background-color: #fff;
+		}
+		#input0{
+			height: 120px;
+			font-size: 40px;
+			vertical-align: bottom;
+			text-align: right;
+			padding-right: 15px;
+			background-color: #ececec
+		}
+
+
+	</style>
+</head>
+<body>
+	
+	<div class="container">
+		<table name="forms" border="1" cellspacing="0">
+			<tr>
+				<td colspan="4" id="input0">0</td>
+			</tr>
+			
+
+			<tr>
+				<td colspan="3"><button onclick="pushBtn(this);">AC</button></td>
+				<td><button onclick="pushBtn(this);">/</button></td>
+			</tr>
+
+			<tr>
+				<td><button onclick="pushBtn(this);">7</button></td>
+				<td><button onclick="pushBtn(this);">8</button></td>
+				<td><button onclick="pushBtn(this);">9</button></td>
+				<td><button onclick="pushBtn(this);">*</button></td>
+			</tr>
+			
+
+			<tr>
+				<td><button onclick="pushBtn(this);">4</button></td>
+				<td><button onclick="pushBtn(this);">5</button></td>
+				<td><button onclick="pushBtn(this);">6</button></td>
+				<td><button onclick="pushBtn(this);">-</button></td>
+			</tr>
+			
+			<tr>
+				<td><button onclick="pushBtn(this);">1</button></td>
+				<td><button onclick="pushBtn(this);">2</button></td>
+				<td><button onclick="pushBtn(this);">3</button></td>
+				<td><button onclick="pushBtn(this);">+</button></td>
+			</tr>
+			
+			<tr>
+				<td colspan="2"><button onclick="pushBtn(this);">0</button></td>
+				<td><button onclick="pushBtn(this);">.</button></td>
+				<td><button onclick="pushBtn(this);">=</button></td>
+			</tr>
+		</table>
+	</div>
+
+	<script type="text/javascript">
+		
+		var input0 = document.getElementById('input0');
+
+		function pushBtn(obj){
+
+			var pushed = obj.innerHTML;
+
+			if(pushed == '=') {
+
+				input0.innerHTML=eval(input0.innerHTML);
+			}
+			 else if(pushed == 'AC') {
+			 	//All clear
+				input0.innerHTML='0';
+
+			}else{
+				if(input0.innerHTML =='0') {
+
+					input0.innerHTML = pushed;
+				}else{
+					input0.innerHTML += pushed;
+				}
+
+			}
+
+		}
+
+	</script>
+
+</body>
+</html>
